@@ -279,7 +279,7 @@ public class Conexao implements Serializable {
             out.writeObject("InserirVenda");
             msg = (String) in.readObject();
             if (msg.equals("ok")) {
-                Operacao venda = new Operacao(dataRetirada, horaRetirada, valorTotal, idUsuario, tipoOperacao);
+                Operacao venda = new Operacao(dataRetirada, valorTotal, idUsuario, tipoOperacao);
                 out.writeObject(venda);
                 return (Integer) in.readObject();
             }
